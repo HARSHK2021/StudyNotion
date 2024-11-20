@@ -23,10 +23,12 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin: "*",
-		credentials: true,
+	  origin: "https://study-notion-swart.vercel.app/", // Replace with your frontend domain
+	  credentials: true,
+	  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+	  allowedHeaders: ["Content-Type", "Authorization"],
 	})
-);
+  );;
 
 app.use(
 	fileUpload({
