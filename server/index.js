@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use( 
 	cors({ 
-		origin:"http://localhost:4000",
+		origin:"https://study-notion-swart.vercel.app",
 		credentials:true,
 	})
 )
@@ -54,6 +54,6 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-	// console.log(`App is running at ${PORT}`)
+	console.log(`App is running at ${PORT}`)
 })
 
