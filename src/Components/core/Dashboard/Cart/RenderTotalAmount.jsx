@@ -14,7 +14,7 @@ const RenderTotalAmount = () => {
     const dispatch = useDispatch()
 
     const handleBuyCourse = () => {
-      console.log("clicke buy now")
+      // console.log("clicke buy now")
         const courses = cart.map((course) => course._id);
         buyCourse(token, courses, user, navigate, dispatch)  
     }

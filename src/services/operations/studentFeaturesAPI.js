@@ -24,7 +24,7 @@ function loadScript(src) {
 }
 
 export const buyCourse = async (token, courses, userDetails, navigate, dispatch,)=> {
-    console.log(courses)
+    // console.log(courses)
 
     const toastId = toast.loading("Loading...");
 
@@ -71,11 +71,11 @@ export const buyCourse = async (token, courses, userDetails, navigate, dispatch,
         paymentObject.open();
         paymentObject.on("payment.failed", (response)=> {
             toast.error("oops, payment failed");
-            console.log(response.error);
-            console.log("response.error"); 
+            // console.log(response.error);
+            // console.log("response.error"); 
         })
     } catch (error) {
-        console.log("PAYMENT API ERROR.....", error);
+        console.error("PAYMENT API ERROR.....", error);
         toast.error("Could not make Payment");
     }
 
@@ -92,7 +92,7 @@ async function sendPaymentSuccessEmail(response, amount, token) {
             Authorization: `Bearer ${token}`
         })
     } catch (error) {
-        console.log("PAYMENT SUCCESS EMAIL ERROR....", error);
+        console.error("PAYMENT SUCCESS EMAIL ERROR....", error);
         toast.error("Payment success mail failed")
     }
 }
@@ -116,7 +116,7 @@ async function verifyPayment(bodyData, token, navigate, dispatch) {
         navigate("/dashboard/enrolled-courses");
         dispatch(resetCart());
     } catch (error) {
-        console.log("PAYMENT VERIFY ERROR....", error);
+        console.error("PAYMENT VERIFY ERROR....", error);
         toast.error("Could not verify Payment");
     }
     toast.dismiss(toastId);

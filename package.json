@@ -8,6 +8,7 @@
     "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
+    "build": "^0.1.4",
     "chart.js": "^4.4.3",
     "cloudinary": "^2.2.0",
     "concurrently": "^8.2.2",
@@ -45,11 +46,6 @@
     "video-react": "^0.16.0",
     "web-vitals": "^2.1.4"
   },
-  
-  
-  
-  
-  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

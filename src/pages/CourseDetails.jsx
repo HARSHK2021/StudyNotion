@@ -37,7 +37,7 @@ const CourseDetails = () => {
                 setCourseData(result);
         } catch (error) {
             toast.error("Could not get course")
-            console.log("Could not fetch coursse details");
+            console.error("Could not fetch coursse details");
         }
       } 
       getCourseFullDetails();

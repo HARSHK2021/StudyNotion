@@ -125,15 +125,15 @@ const CourseInformationForm = () => {
               dispatch(setCourse(result))
               }
               setLoading(false)
-              console.log("eror:2")
+              // console.log("eror:2")
             }else{
-              console.log("eror:1")
+              // console.log("eror:1")
                 toast.error("No changes made to the form") 
                 dispatch(setStep(2))  
             }
             return; 
         }
-        console.log("eror:3")
+        // console.log("eror:3")
 
         const formData = new FormData();
         formData.append("courseName", data.courseTitle)
@@ -145,7 +145,7 @@ const CourseInformationForm = () => {
         formData.append("status", COURSE_STATUS.DRAFT)
         formData.append("instructions", JSON.stringify(data.courseRequirements))
         formData.append("thumbnailImage", data.courseImage)
-        console.log("courseCategory is : ",data.courseCategory)
+        // console.log("courseCategory is : ",data.courseCategory)
         setLoading(true);
 
         const result = await addCourseDetails(formData, token);

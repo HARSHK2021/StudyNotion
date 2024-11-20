@@ -30,7 +30,7 @@ const SignupForm = () => {
       }
     
     const { firstName, lastName, email, password, confirmPassword } = formData;
-    console.log(formData);
+    // console.log(formData);
     const tabData = [
         {
           id: 1,

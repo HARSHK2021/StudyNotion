@@ -33,7 +33,7 @@ const Navbar = () => {
             setSubLinks(result?.data?.data); 
         }
         catch(error) {
-            console.log("Could not fetch the category list");
+            console.error("Could not fetch the category list");
         }
         setLoading(false);
     }

@@ -18,7 +18,7 @@ const MyCourses = () => {
       const result = await fetchInstructorCourses(token) 
       if(result){
         setCourses(result);
-        console.log(result); 
+        // console.log(result); 
       }
     }
 

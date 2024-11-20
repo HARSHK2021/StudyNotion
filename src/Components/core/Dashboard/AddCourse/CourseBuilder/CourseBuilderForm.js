@@ -82,7 +82,7 @@ const CourseBuilderForm = () => {
       toast.error("Please add atleast one lecture in each section")
       return
     }
-    console.log(course.category)
+    // console.log(course.category)
     dispatch(setStep(3))
   }
 

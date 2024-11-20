@@ -17,7 +17,7 @@ const EnrolledCourses = () => {
             setEnrolledCourses(response);
         }
         catch(error) {
-            console.log("Unable to Fetch Enrolled Courses");
+            console.error("Unable to Fetch Enrolled Courses");
         }
     }
 

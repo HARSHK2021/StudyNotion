@@ -20,7 +20,7 @@ export function sendOtp(email, navigate){
      const toastId = toast.loading("Loading...")
      dispatch(setLoading(true));
      
-     console.log(email)
+    //  console.log(email)
      try {
       
      
@@ -32,15 +32,15 @@ export function sendOtp(email, navigate){
       if(!response.data.success){
         throw new Error(response.data.message)
       }
-      console.log("checking error : 3")
+
 
       toast.success("OTP Sent Successfully")
       navigate("/verify-email")
      } catch (error) {
-      console.log("SENDOTP API ERROR............", error)
+      console.error("SENDOTP API ERROR............", error)
       toast.error("Could Not Send OTP")
      }
-     console.log("checking error : 4")
+    //  console.log("checking error : 4")
      dispatch(setLoading(false));
      toast.dismiss(toastId);
   }
@@ -73,9 +73,9 @@ export function signUp(
         image,
       })
 
-      console.log("SIGNUP_API RESPONSE............", response)
+      // console.log("SIGNUP_API RESPONSE............", response)
 
-      console.log(response.data.success)
+      // console.log(response.data.success)
 
       if(!response.data.success){
         throw new Error(response.data.message)
@@ -84,7 +84,7 @@ export function signUp(
       toast.success("Signup successful")
       navigate("/login")
      } catch (error) {
-      console.log("SIGNUP_API ERROR............", error)
+      console.error("SIGNUP_API ERROR............", error)
       toast.error("Could Not Sign up user")
      }
      dispatch(setLoading(false));
@@ -103,9 +103,9 @@ export function login(email, password, navigate){
         password,
       })
 
-      console.log("LOGIN API RESPONSE............", response)
+      // console.log("LOGIN API RESPONSE............", response)
 
-      console.log(response.data.success)
+      // console.log(response.data.success)
 
       if(!response.data.success){
         throw new Error(response.data.message)
@@ -122,7 +122,7 @@ export function login(email, password, navigate){
       localStorage.setItem("user", JSON.stringify(response.data.user)) 
       navigate("/dashboard/my-profile")
      } catch (error) {
-      console.log("LOGIN API ERROR............", error)
+      console.error("LOGIN API ERROR............", error)
       toast.error("Could Not LOGIN")
      }
      dispatch(setLoading(false));
@@ -149,9 +149,9 @@ export function getPasswordResetToken(email, setEmailSent){
 
     try {
      const response = await apiConnector("POST", RESETPASSTOKEN_API, {email});
-     console.log("RESETPASSTOKEN_API RESPONSE............", response)
+    //  console.log("RESETPASSTOKEN_API RESPONSE............", response)
 
-      console.log(response.data.success)
+    //   console.log(response.data.success)
 
       if(!response.data.success){
         throw new Error(response.data.message)
@@ -160,7 +160,7 @@ export function getPasswordResetToken(email, setEmailSent){
       toast.success("Mail Sent successful")
       setEmailSent(true);
     } catch (error) {
-      console.log("RESETPASSTOKEN_API ERROR............", error)
+      console.error("RESETPASSTOKEN_API ERROR............", error)
       toast.error("Could Not Send Mail")
     }
     dispatch(setLoading(false));
@@ -176,9 +176,9 @@ export function resetPassword(password, confirmPassword, token, navigate) {
     try {
       const response = await apiConnector("POST", RESETPASSWORD_API, {password, confirmPassword, token})
 
-      console.log("RESETPASSWORD_API RESPONSE............", response)
+      // console.log("RESETPASSWORD_API RESPONSE............", response)
 
-      console.log(response.data.success)
+      // console.log(response.data.success)
 
       if(!response.data.success){
         throw new Error(response.data.message)
@@ -188,7 +188,7 @@ export function resetPassword(password, confirmPassword, token, navigate) {
       navigate('/login')
 
     } catch (error) {
-      console.log("RESET PASSWORD TOKEN Error", error);
+      console.error("RESET PASSWORD TOKEN Error", error);
       toast.error("Unable to reset password");
     }
 
